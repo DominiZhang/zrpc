@@ -4,6 +4,8 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 import com.zzd.zrpc.exception.SerializeException;
+import com.zzd.zrpc.remoting.dto.RpcRequest;
+import com.zzd.zrpc.remoting.dto.RpcResponse;
 import com.zzd.zrpc.serialize.Serializer;
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,8 +26,8 @@ public class KryoSerializer implements Serializer {
      */
     private final ThreadLocal<Kryo> kryoThreadLocal = ThreadLocal.withInitial(() -> {
         Kryo kryo = new Kryo();
-//        kryo.register(RecResponse.class);
-//        kryo.register(RecRequest.class);
+        kryo.register(RpcRequest.class);
+        kryo.register(RpcResponse.class);
         return kryo;
     });
 
