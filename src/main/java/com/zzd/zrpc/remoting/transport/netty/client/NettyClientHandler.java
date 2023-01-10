@@ -8,7 +8,7 @@ import io.netty.util.ReferenceCountUtil;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author 粽子
+ * @author zzd
  * @date 2023/1/9
  */
 @Slf4j
@@ -30,5 +30,11 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter {
             ReferenceCountUtil.release(msg);
         }
         super.channelRead(ctx, msg);
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        log.error("client caught exception:" + cause.getMessage());
+        ctx.close();
     }
 }

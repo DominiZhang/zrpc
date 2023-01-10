@@ -56,6 +56,10 @@ public class NettyClient {
 
     /**
      * 发送消息到服务端
+     * 流程分析: 1.初始化了一个BootStrap对象
+     *      2.使用BootStrap对象连接服务端
+     *      3.通过channel通道向服务端发送消息RpcRequest
+     *      4.发送成功后，阻塞等待，直到Channel通道关闭
      * @param req 消息体
      * @return 服务端返回的数据
      */
@@ -63,6 +67,8 @@ public class NettyClient {
         try {
             ChannelFuture channelFuture = boot.connect(host, port).sync();
             log.info("client connect {}", host + ":" + port);
+            // AttributeMap是一个接口，但是数据结构类似于Map数据结构, 可以将key看作是AttributeKey, value看作是Attribute, 可以根据 AttributeKey 找到对应的 Attribute
+            // Channel 实现了 AttributeMap, 这就表明它拥有AttributeMap 的相关属性, 每个Channel上的AttributeMap属于共享数据
             Channel channel = channelFuture.channel();
             log.info("send message");
             if (null != channel) {

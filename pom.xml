@@ -20,6 +20,7 @@
         <!--logging-->
         <slf4j.version>1.7.25</slf4j.version>
         <netty.version>4.1.42.Final</netty.version>
+        <curator.version>4.2.0</curator.version>
     </properties>
 
     <dependencies>
@@ -60,6 +61,18 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>${netty.version}</version>
+        </dependency>
+
+        <!-- curator -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>${curator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${curator.version}</version>
         </dependency>
     </dependencies>
 
