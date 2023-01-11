@@ -2,8 +2,8 @@ package com.zzd.zrpc.remoting.transport.netty.client;
 
 import com.zzd.zrpc.remoting.dto.RpcRequest;
 import com.zzd.zrpc.remoting.dto.RpcResponse;
-import com.zzd.zrpc.remoting.transport.netty.coder.NettyKryoDecoder;
-import com.zzd.zrpc.remoting.transport.netty.coder.NettyKryoEncoder;
+import com.zzd.zrpc.remoting.transport.netty.codec.NettyKryoDecoder;
+import com.zzd.zrpc.remoting.transport.netty.codec.NettyKryoEncoder;
 import com.zzd.zrpc.serialize.kryo.KryoSerializer;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -49,7 +49,7 @@ public class NettyClient {
                         sc.pipeline().addLast(new NettyKryoDecoder(serializer, RpcResponse.class));
                         // ByteBuf -> RpcRequest
                         sc.pipeline().addLast(new NettyKryoEncoder(serializer, RpcRequest.class));
-                        sc.pipeline().addLast(new NettyClientHandler());
+                        sc.pipeline().addLast(new NettyRpcClientHandler());
                     }
                 });
     }

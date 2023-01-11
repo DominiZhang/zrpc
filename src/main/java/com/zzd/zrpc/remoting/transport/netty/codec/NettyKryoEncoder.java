@@ -1,4 +1,4 @@
-package com.zzd.zrpc.remoting.transport.netty.coder;
+package com.zzd.zrpc.remoting.transport.netty.codec;
 
 import com.zzd.zrpc.serialize.Serializer;
 import io.netty.buffer.ByteBuf;
