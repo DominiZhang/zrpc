@@ -11,6 +11,7 @@ import java.net.InetSocketAddress;
 public interface ServiceDiscovery {
     /**
      * lookup service by rpcServiceName
+     * @param rpcRequest rpcRequest
      * @return service address
      */
     InetSocketAddress lookupService(RpcRequest rpcRequest);
