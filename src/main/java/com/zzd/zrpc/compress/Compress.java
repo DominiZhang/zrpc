@@ -1,8 +1,11 @@
 package com.zzd.zrpc.compress;
 
+import com.zzd.zrpc.extension.SPI;
+
 /**
  * @author zzd
  */
+@SPI
 public interface Compress {
 
     /**

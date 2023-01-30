@@ -19,7 +19,7 @@ import java.lang.reflect.Field;
 /**
  * 需要实现 BeanPostProcessor 接口并重写 postProcessBeforeInitialization() 方法和 postProcessAfterInitialization() 方法
  * Spring bean在实例化之前会调用 postProcessBeforeInitialization() 方法, 在 bean 实例化之后会调用 postProcessAfterInitialization() 方法
- * 可以在 postProcessBeforeInitialization() 方法中去判断类上是否有prcService注解.如果有的化，取出 group 和 version 的值, 然后再调用 serviceProvider 的 publishService() 方法发布服务即可!
+ * 可以在 postProcessBeforeInitialization() 方法中去判断类上是否有rpcService注解.如果有的化，取出 group 和 version 的值, 然后再调用 serviceProvider 的 publishService() 方法发布服务即可!
  * 我们可以在 postProcessAfterInitialization() 方法中遍历类的属性上是否有 RpcReference 注解, 如果有的话，便通过反射将这个属性赋值即可!
  *
  * @author zzd

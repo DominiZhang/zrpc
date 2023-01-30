@@ -19,7 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Slf4j
 public class ExtensionLoader<T> {
-    private static final String SERVICE_DIRECTORY = "META-INF/extensions";
+    private static final String SERVICE_DIRECTORY = "META-INF/extensions/";
     private static final Map<Class<?>, ExtensionLoader<?>> EXTENSION_LOADER_MAP = new ConcurrentHashMap<>();
     private static final Map<Class<?>, Object> EXTENSION_INSTANCE_MAP = new ConcurrentHashMap<>();
 
@@ -78,7 +78,7 @@ public class ExtensionLoader<T> {
         // load all extension classes of type T from file and get specific one by name
         Class<?> clazz = getExtensionClasses().get(name);
         if (null == clazz) {
-            throw new RuntimeException("No such extension of name" + name);
+            throw new RuntimeException("No such extension of name: " + name);
         }
         T instance = (T) EXTENSION_INSTANCE_MAP.get(clazz);
         if (null == instance) {

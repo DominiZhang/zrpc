@@ -1,0 +1,3 @@
+kyro=com.zzd.zrpc.serialize.kryo.KryoSerializer
+protostuff=com.zzd.zrpc.serialize.protostuff.ProtostuffSerializer
+hessian=com.zzd.zrpc.serialize.hessian.HessianSerializer

@@ -1,5 +1,6 @@
 package com.zzd.zrpc.loadbalance;
 
+import com.zzd.zrpc.extension.SPI;
 import com.zzd.zrpc.remoting.dto.RpcRequest;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
  *
  * @author zzd
  */
+@SPI
 public interface LoadBalance {
 
     /**

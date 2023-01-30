@@ -2,7 +2,6 @@ package com.zzd.zrpc.loadbalance.loadbalancer;
 
 import com.zzd.zrpc.loadbalance.AbstractLoadBalance;
 import com.zzd.zrpc.remoting.dto.RpcRequest;
-import org.apache.logging.log4j.spi.DefaultThreadContextMap;
 
 import java.util.List;
 import java.util.Random;

@@ -1,5 +1,6 @@
 package com.zzd.zrpc.registry;
 
+import com.zzd.zrpc.extension.SPI;
 import com.zzd.zrpc.remoting.dto.RpcRequest;
 
 import java.net.InetSocketAddress;
@@ -8,6 +9,7 @@ import java.net.InetSocketAddress;
  * @author zzd
  * @date 2023/1/11
  */
+@SPI
 public interface ServiceDiscovery {
     /**
      * lookup service by rpcServiceName

@@ -13,7 +13,6 @@ import java.lang.annotation.*;
  */
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-// TODO
 @Import(CustomScannerRegistrar.class)
 @Documented
 public @interface RpcScan {

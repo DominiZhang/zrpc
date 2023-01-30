@@ -1,6 +1,5 @@
 package com.zzd.zrpc.remoting.transport.netty.server;
 
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.zzd.zrpc.config.CustomShutdownHook;
 import com.zzd.zrpc.config.RpcServiceConfig;
 import com.zzd.zrpc.factory.SingletonFactory;
@@ -21,11 +20,9 @@ import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.concurrent.DefaultEventExecutorGroup;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.zookeeper.data.Id;
 import org.springframework.stereotype.Component;
 
 import java.net.InetAddress;
-import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
